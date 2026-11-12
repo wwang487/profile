@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wei Wang, Applied Scientist at Amazon. Ph.D. in Civil and Environmental Engineering, University of Wisconsin–Madison. Remote sensing, deep learning, and natural hazards in the Great Lakes region.">
+<title>Wei Wang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>
+/* Same palette and type as the research page. Layout: banner, then a left column
+   (photo, name, affiliation, links) and a right column (tabs + sections). */
+:root {
+  --bg: #ffffff;
+  --surface: #f3f2ee;
+  --fg: #1d1c1a;
+  --muted: #62605a;
+  --line: #dedbd2;
+  --accent: #1f3f6e;
+  --accent-soft: #dde6f2;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --serif: "Merriweather", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #15171c; --surface: #1d2027; --fg: #e9e6df; --muted: #a9a59b; --line: #343841; --accent: #9dbbe6; --accent-soft: #223149; color-scheme: dark; } }
+
+* { box-sizing: border-box; }
+html { font-size: 112.5%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 1rem; line-height: 1.65; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3 { margin: 0; line-height: 1.25; text-wrap: balance; }
+p { margin: 0 0 1rem; }
+
+/* banner */
+.hero { position: relative; height: clamp(140px, 22vw, 320px); overflow: hidden;
+  background: linear-gradient(180deg, #0d1b2e 0%, #1f3f6e 55%, #3c6a9a 100%); }
+.hero svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 55%; }
+
+/* two columns */
+.wrap { max-width: 1200px; margin-inline: auto; padding: 1.5rem 16px 4rem; display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+@media (min-width: 820px) { .wrap { grid-template-columns: 250px minmax(0, 1fr); gap: 3.5rem; padding: 2.6rem 20px 4rem; } }
+
+/* left column */
+.side { min-width: 0; display: grid; grid-template-columns: 110px minmax(0, 1fr); column-gap: 1rem; align-items: start; }
+.side .photo { grid-column: 1; grid-row: 1 / span 4; border-radius: 6px; overflow: hidden; background: var(--surface); aspect-ratio: 4 / 5; }
+.side .photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 39% 34%; }
+.side h1 { grid-column: 2; font-family: "Source Serif 4", Georgia, "Times New Roman", serif; font-size: 1.87rem; font-weight: 600; letter-spacing: -0.01em; }
+.side .title { grid-column: 2; color: var(--muted); font-size: 0.86rem; line-height: 1.5; margin-top: 0.3rem; }
+.side .links { grid-column: 2; list-style: none; margin: 0.5rem 0 0; padding: 0; font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 0.2rem 1rem; }
+.side .links a { color: var(--muted); text-decoration: none; }
+.side .links a:hover { color: var(--accent); text-decoration: underline; }
+@media (min-width: 820px) {
+  .side { display: block; }
+  .side .photo { width: 100%; margin-bottom: 1.1rem; }
+  .side h1 { text-align: center; }
+  .side .title { text-align: center; margin-top: 0.6rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+  .side .links { display: grid; gap: 0.45rem; margin-top: 1rem; }
+}
+
+/* tabs */
+.content { min-width: 0; }
+.tabs { border-bottom: 1px solid var(--line); margin-bottom: 1.6rem; overflow-x: auto; }
+.tabs ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.tabs a { display: block; padding: 0.55rem 0.95rem; color: var(--muted); text-decoration: none; font-size: 0.95rem; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs a:hover { color: var(--fg); }
+.tabs a[aria-current="page"] { color: var(--fg); font-weight: 600; border-bottom-color: var(--fg); }
+
+/* sections */
+main { min-width: 0; }
+.about p { font-family: var(--serif); font-size: 0.95rem; line-height: 1.85; }
+.section { margin-top: 2.4rem; }
+.section h2 { font-size: 1.333rem; font-weight: 600; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); margin-bottom: 0.8rem; }
+.tags { list-style: none; margin: 1.2rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.tags li { background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0.15rem 0.6rem; font-size: 0.85rem; }
+
+/* dated entries: education, experience, service */
+.entries { list-style: none; margin: 0; padding: 0; }
+.entries li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.2rem 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.entries li:last-child { border-bottom: 0; }
+.entries .when { color: var(--muted); font-size: 0.85rem; padding-top: 0.1rem; font-variant-numeric: tabular-nums; }
+.entries .what { font-weight: 600; }
+.entries .where { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 520px) { .entries li { grid-template-columns: minmax(0, 1fr); } }
+
+/* skills */
+.skills { margin: 0; display: grid; gap: 0.6rem; }
+.skills div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.2rem 1rem; }
+.skills dt { color: var(--muted); font-size: 0.85rem; padding-top: 0.1rem; }
+.skills dd { margin: 0; font-size: 0.95rem; }
+@media (max-width: 520px) { .skills div { grid-template-columns: minmax(0, 1fr); } }
+
+/* software */
+.projects { display: grid; gap: 0.8rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.projects a { display: block; height: 100%; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); text-decoration: none; color: var(--fg); }
+.projects a:hover { border-color: var(--accent); }
+.projects h3 { font-size: 0.98rem; font-weight: 600; color: var(--accent); margin-bottom: 0.3rem; }
+.projects p { margin: 0; font-size: 0.86rem; color: var(--muted); line-height: 1.55; }
+
+footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 2.5rem; }
+</style>
+</head>
+<body>
+<header class="hero" aria-hidden="true">
+  <svg viewBox="0 0 1440 220" preserveAspectRatio="none">
+    <path fill="#ffffff" fill-opacity="0.06" d="M0 90 C 240 40 480 140 720 90 S 1200 40 1440 90 V220 H0Z"/>
+    <path fill="#ffffff" fill-opacity="0.08" d="M0 130 C 260 90 520 170 780 125 S 1220 95 1440 135 V220 H0Z"/>
+    <path fill="#ffffff" fill-opacity="0.10" d="M0 170 C 300 140 560 200 840 165 S 1260 150 1440 175 V220 H0Z"/>
+  </svg>
+</header>
+<div class="wrap">
+  <aside class="side">
+    <div class="photo"><img src="photo.jpg" alt="Wei Wang" width="1080" height="1920"></div>
+    <h1>Wei Wang</h1>
+    <div class="title">Applied Scientist, Amazon<br>Ph.D., Civil and Environmental Engineering<br>University of Wisconsin–Madison</div>
+    <ul class="links">
+      <li><a href="mailto:wwang487@wisc.edu">wwang487@wisc.edu</a></li>
+      <li><a href="mailto:wwang.cee.wisc@gmail.com">wwang.cee.wisc@gmail.com</a></li>
+      <li><a href="https://scholar.google.com/citations?user=dlwFjcYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0009-0000-8509-5536" target="_blank" rel="noopener">ORCID</a></li>
+      <li><a href="https://github.com/wwang487" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/wei-wang-199596350/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.researchgate.net/profile/Wei-Wang-955" target="_blank" rel="noopener">ResearchGate</a></li>
+    </ul>
+  </aside>
+
+  <div class="content">
+    <nav class="tabs" aria-label="Pages">
+      <ul>
+        <li><a href="https://wwang487.github.io/profile/" aria-current="page">Profile</a></li>
+        <li><a href="https://wwang487.github.io/research/">Research</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="about">
+        <p>I am an Applied Scientist at Amazon, where I develop large-scale data analytics and machine learning solutions to enhance warehouse operations and system efficiency. I recently earned my Ph.D. in Civil and Environmental Engineering from the University of Wisconsin–Madison, where I also completed a Master’s in Computer Science. Before that, I received dual Bachelor’s degrees in Environmental Science and Economics from Peking University, China.</p>
+        <p>My research focuses on advancing remote sensing, image processing, and deep learning techniques to detect, monitor, and characterize natural hazards in the Great Lakes region. More broadly, I am interested in applying stochastic simulations, image analysis, and machine learning to address interdisciplinary problems in ecology, hydrology, environmental science, and the social sciences. See my <a href="https://wwang487.github.io/research/">publications</a>.</p>
+        <ul class="tags" aria-label="Research interests">
+          <li>Deep Learning</li><li>Remote Sensing</li><li>Natural Hazards</li><li>Coastal Engineering</li><li>Hydrology</li><li>Environmental Science</li><li>Ecology</li>
+        </ul>
+      </div>
+
+      <section class="section" id="experience">
+        <h2>Experience</h2>
+        <ul class="entries">
+          <li><span class="when">2025 – present</span><div><div class="what">Applied Scientist</div><div class="where">Amazon.com, Inc.</div></div></li>
+          <li><span class="when">2017 – 2025</span><div><div class="what">Graduate Researcher</div><div class="where">Department of Civil and Environmental Engineering, University of Wisconsin–Madison</div></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="education">
+        <h2>Education</h2>
+        <ul class="entries">
+          <li><span class="when">2025</span><div><div class="what">Ph.D., Civil and Environmental Engineering</div><div class="where">University of Wisconsin–Madison</div></div></li>
+          <li><span class="when">2021</span><div><div class="what">M.S., Computer Science</div><div class="where">University of Wisconsin–Madison</div></div></li>
+          <li><span class="when">2017</span><div><div class="what">B.S., Environmental Science</div><div class="where">College of Environmental Science and Engineering, Peking University, China</div></div></li>
+          <li><span class="when">2017</span><div><div class="what">B.A., Economics</div><div class="where">National School of Development, Peking University, China</div></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="service">
+        <h2>Service</h2>
+        <ul class="entries">
+          <li><span class="when">2025</span><div><div class="what">International Program Committee Member, Technical Tracks</div><div class="where">The 18th International Symposium on Visual Information Communication and Interaction (VINCI 2025)</div></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>Skills</h2>
+        <dl class="skills">
+          <div><dt>Programming</dt><dd>Python, Java, MATLAB, C++, JavaScript, R</dd></div>
+          <div><dt>Frameworks</dt><dd>PyTorch, TensorFlow, OpenCV, Keras, scikit-learn, MySQL, Node.js</dd></div>
+          <div><dt>Tools</dt><dd>Git, Linux, Spark, Docker, AWS, Azure, Remote Sensing, Structure-from-Motion, Surveying, UAV Pilot</dd></div>
+        </dl>
+      </section>
+
+      <section class="section" id="software">
+        <h2>Software</h2>
+        <div class="projects">
+          <a href="https://github.com/wwang487/MultiDataPlotting" target="_blank" rel="noopener"><h3>MultiDataPlotting</h3><p>A Python package for user-friendly high-dimensional data plotting.</p></a>
+          <a href="https://github.com/wwang487/UAV-MMI" target="_blank" rel="noopener"><h3>UAV-MMI</h3><p>A Python-based script for processing UAV-based data to obtain stream habitat multi-metric assessments.</p></a>
+          <a href="https://github.com/wwang487/BehaviorRecognition" target="_blank" rel="noopener"><h3>BehaviorRecognition</h3><p>A Python-based deep learning script for detecting animal behaviors from camera traps, with Luping Wang (Wildlife Management, UW–Madison).</p></a>
+        </div>
+      </section>
+    </main>
+    <footer>&copy; 2026 Wei Wang.</footer>
+  </div>
+</div>
+</body>
+</html>
