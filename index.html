@@ -94,7 +94,7 @@ main { min-width: 0; }
 /* software */
 .projects { display: grid; gap: 0.8rem; grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 640px) { .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.projects a { display: block; height: 100%; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); text-decoration: none; color: var(--fg); }
+.projects a, .projects .card { display: block; height: 100%; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); text-decoration: none; color: var(--fg); }
 .projects a:hover { border-color: var(--accent); }
 .projects h3 { font-size: 0.98rem; font-weight: 600; color: var(--accent); margin-bottom: 0.3rem; }
 .projects p { margin: 0; font-size: 0.86rem; color: var(--muted); line-height: 1.55; }
@@ -181,7 +181,7 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--li
         <div class="projects">
           <a href="https://github.com/wwang487/MultiDataPlotting" target="_blank" rel="noopener"><h3>MultiDataPlotting</h3><p>A Python package for user-friendly high-dimensional data plotting.</p></a>
           <a href="https://github.com/wwang487/UAV-MMI" target="_blank" rel="noopener"><h3>UAV-MMI</h3><p>A Python-based script for processing UAV-based data to obtain stream habitat multi-metric assessments.</p></a>
-          <a href="https://github.com/wwang487/BehaviorRecognition" target="_blank" rel="noopener"><h3>BehaviorRecognition</h3><p>A Python-based deep learning script for detecting animal behaviors from camera traps, with Luping Wang (Wildlife Management, UW–Madison).</p></a>
+          <div class="card"><h3>BehaviorRecognition</h3><p>A Python-based deep learning script for detecting animal behaviors from camera traps, with Luping Wang (Wildlife Management, UW–Madison).</p></div>
         </div>
       </section>
     </main>
