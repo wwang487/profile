@@ -84,6 +84,13 @@ main { min-width: 0; }
 .entries .where { color: var(--muted); font-size: 0.92rem; }
 @media (max-width: 520px) { .entries li { grid-template-columns: minmax(0, 1fr); } }
 
+/* peer review: journal chips with review counts */
+.review-sum { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.9rem; }
+.review-sum strong { color: var(--fg); font-weight: 600; }
+.journals { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.journals li { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.86rem; padding: 0.2rem 0.3rem 0.2rem 0.65rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
+.journals span { min-width: 1.5rem; text-align: center; font-size: 0.78rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: 0 0.3rem; font-variant-numeric: tabular-nums; }
+
 /* skills */
 .skills { margin: 0; display: grid; gap: 0.6rem; }
 .skills div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.2rem 1rem; }
@@ -164,6 +171,43 @@ footer { color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--li
         <h2>Service</h2>
         <ul class="entries">
           <li><span class="when">2025</span><div><div class="what">International Program Committee Member, Technical Tracks</div><div class="where">The 18th International Symposium on Visual Information Communication and Interaction (VINCI 2025)</div></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="review">
+        <h2>Peer Review</h2>
+        <p class="review-sum"><strong>89</strong> reviews for <strong>30</strong> journals, 2020–2026 · <a href="https://orcid.org/0009-0000-8509-5536" target="_blank" rel="noopener">verified on ORCID</a></p>
+        <ul class="journals">
+          <li>Remote Sensing <span>16</span></li>
+          <li>Sustainability <span>9</span></li>
+          <li>IEEE Access <span>8</span></li>
+          <li>Journal of Hydrology <span>7</span></li>
+          <li>Journal of Cleaner Production <span>6</span></li>
+          <li>Water Resources Management <span>5</span></li>
+          <li>Discover Civil Engineering <span>3</span></li>
+          <li>Journal of Testing and Evaluation <span>3</span></li>
+          <li>Earth System Dynamics <span>2</span></li>
+          <li>Environmental Research Communications <span>2</span></li>
+          <li>ISPRS International Journal of Geo-Information <span>2</span></li>
+          <li>Journal of Flood Risk Management <span>2</span></li>
+          <li>Journal of Imaging <span>2</span></li>
+          <li>Journal of Marine Science and Engineering <span>2</span></li>
+          <li>Journal of Water and Climate Change <span>2</span></li>
+          <li>Marine Environmental Research <span>2</span></li>
+          <li>Water <span>2</span></li>
+          <li>Water Resources Research <span>2</span></li>
+          <li>AgriEngineering <span>1</span></li>
+          <li>Annals of Telecommunications <span>1</span></li>
+          <li>Discover Environment <span>1</span></li>
+          <li>Dynamics <span>1</span></li>
+          <li>Electronics <span>1</span></li>
+          <li>Estuarine, Coastal and Shelf Science <span>1</span></li>
+          <li>Geocarto International <span>1</span></li>
+          <li>GeoInformatica <span>1</span></li>
+          <li>Gondwana Research <span>1</span></li>
+          <li>International Journal of Digital Earth <span>1</span></li>
+          <li>Marine Pollution Bulletin <span>1</span></li>
+          <li>Sensors <span>1</span></li>
         </ul>
       </section>
 
